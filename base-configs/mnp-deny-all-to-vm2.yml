@@ -1,0 +1,14 @@
+apiVersion: k8s.cni.cncf.io/v1beta1
+kind: MultiNetworkPolicy
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/policy-for: l2-network
+  name: deny-all-to-vm2
+  namespace: demo-vm-altug
+spec:
+  podSelector:
+    matchLabels:
+      vm.kubevirt.io/name: fedora-demo-vm2
+  ingress: []
+  policyTypes:
+    - Ingress

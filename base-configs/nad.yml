@@ -1,0 +1,11 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  annotations:
+    description: Linux bridge on worker1 with ens1 as a port
+    k8s.v1.cni.cncf.io/resourceName: bridge.network.kubevirt.io/ens1-br-vmdata
+  name: database-network-crazy-guineafowl
+  namespace: default
+  uid: fa6c6158-c6c6-4501-9b22-8836035230bd
+spec:
+  config: '{"name":"database-network-crazy-guineafowl","type":"cnv-bridge","cniVersion":"0.3.1","bridge":"ens1-br-vmdata","vlan":1993,"macspoofchk":true,"ipam":{},"preserveDefaultVlan":false}'

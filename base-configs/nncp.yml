@@ -1,0 +1,74 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  annotations:
+    description: Create bridge br-vmdata with ens1 as a port
+    nmstate.io/webhook-mutating-timestamp: '1714590945452039123'
+  creationTimestamp: '2024-05-01T18:18:05Z'
+  generation: 5
+  managedFields:
+    - apiVersion: nmstate.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:description': {}
+        'f:spec':
+          .: {}
+          'f:desiredState':
+            .: {}
+            'f:interfaces': {}
+          'f:nodeSelector':
+            .: {}
+            'f:external-network': {}
+      manager: Mozilla
+      operation: Update
+      time: '2024-05-01T19:15:45Z'
+    - apiVersion: nmstate.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+          'f:lastUnavailableNodeCountUpdate': {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2024-05-01T19:15:47Z'
+  name: ens1-br-vmdata
+  resourceVersion: '393529'
+  uid: 77926513-4211-487d-b87d-950e67eff4ce
+spec:
+  desiredState:
+    interfaces:
+      - bridge:
+          port:
+            - name: ens1
+        ipv4:
+          dhcp: true
+          enabled: true
+        name: br-vmdata
+        state: up
+        type: linux-bridge
+  nodeSelector:
+    external-network: 'true'
+status:
+  conditions:
+    - lastHeartbeatTime: '2024-05-01T19:15:47Z'
+      lastTransitionTime: '2024-05-01T19:15:47Z'
+      message: 1/1 nodes successfully configured
+      reason: SuccessfullyConfigured
+      status: 'True'
+      type: Available
+    - lastHeartbeatTime: '2024-05-01T19:15:47Z'
+      lastTransitionTime: '2024-05-01T19:15:47Z'
+      reason: SuccessfullyConfigured
+      status: 'False'
+      type: Degraded
+    - lastHeartbeatTime: '2024-05-01T19:15:47Z'
+      lastTransitionTime: '2024-05-01T19:15:47Z'
+      reason: ConfigurationProgressing
+      status: 'False'
+      type: Progressing
+  lastUnavailableNodeCountUpdate: '2024-05-01T18:18:06Z'
