@@ -4,5 +4,4 @@ metadata:
   annotations:
     openshift.io/description: "Networking Demo Project 1"
     openshift.io/display-name: Networking Demo - Project 1
-    argocd.argoproj.io/sync-wave: "1"
   name: networking-altug-demo-project1

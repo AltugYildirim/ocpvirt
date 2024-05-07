@@ -48,12 +48,12 @@ spec:
                 bus: virtio
               name: cloudinitdisk
           interfaces:
-            - macAddress: '02:a4:1a:00:00:23'
+            - macAddress: '02:a4:1a:00:00:22'
               masquerade: {}
               model: virtio
               name: default
             - bridge: {}
-              macAddress: '02:a4:1a:00:00:51'
+              macAddress: '02:a4:1a:00:00:50'
               model: virtio
               name: nic-2
           networkInterfaceMultiqueue: true
