@@ -4,7 +4,7 @@ metadata:
   annotations:
     k8s.v1.cni.cncf.io/policy-for: l2-network
   name: deny-all
-  namespace: demo-vm-altug
+  namespace: networking-altug-demo-project2
 spec:
   podSelector: {}
   ingress: []
